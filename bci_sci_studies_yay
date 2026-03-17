@@ -1,27 +1,23 @@
-> df <- read_csv("bci_sci_studies_yay - Sheet1.csv")
-> library(tidyverse)
-> library(plotly)
-> 
-> country_counts <- df %>%
-+     group_by(Country) %>%
-+     summarise(Study_Count = n())
-> 
-> fig <- plot_ly(
-+     data = country_counts,
-+     type = "choropleth",
-+     locations = ~Country,
-+     locationmode = "country names",
-+     z = ~Study_Count,
-+     colorscale = "Reds",
-+     colorbar = list(title = "Study Count")
-+ ) %>%
-+     layout(
-+         title = "Global Distribution of BCI Spinal Cord Injury Studies"
-+     )
-> 
-> fig
-> 
-> library(tidyverse)
-> library(plotly)
-> 
-> df <- read_csv("bci_sci_studies - Sheet1.csv")
+library(tidyverse)
+library(plotly)
+
+df <- read_csv("bci_sci_studies_woo - Sheet1.csv")
+
+country_counts <- df %>%
+    group_by(Country) %>%
+    summarise(Study_Count = n())
+
+fig <- plot_ly(
+    data = country_counts,
+    type = "choropleth",
+    locations = ~Country,
+    locationmode = "country names",
+    z = ~Study_Count,
+    colorscale = "Reds",
+    colorbar = list(title = "Study Count")
+) %>%
+    layout(
+        title = "Global Distribution of BCI Spinal Cord Injury Studies"
+    )
+
+fig
