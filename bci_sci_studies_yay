@@ -13,7 +13,7 @@ fig <- plot_ly(
     locations = ~Country,
     locationmode = "country names",
     z = ~Study_Count,
-    colorscale = "Reds",
+    colorscale = "Blues",
     colorbar = list(title = "Study Count")
 ) %>%
     layout(
