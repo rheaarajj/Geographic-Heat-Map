@@ -1,16 +1,16 @@
 library(tidyverse)
 library(plotly)
 
-df <- read_csv("bci_sci_studies_woo - Sheet1.csv")
+df <- read_csv("new_bci_sci_studies_woo - Sheet1.csv")
 
 country_counts <- df %>%
-    group_by(Country) %>%
-    summarise(Study_Count = n())
+    group_by(Countries) %>%
+    summarise(Study_Count = `Study count`)
 
 fig <- plot_ly(
     data = country_counts,
     type = "choropleth",
-    locations = ~Country,
+    locations = ~Countries,
     locationmode = "country names",
     z = ~Study_Count,
     zmin = 0,
