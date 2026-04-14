@@ -21,7 +21,7 @@ fig <- plot_ly(
 ) %>%
     layout(
         title = list(
-            text = "Global Distribution of BCI Spinal Cord Injury Studies",
+            text = "BCI Studies Across Neurological and Motor Impairment Populations",
             font = list(family = "Helvetica")
         ),
         font = list(family = "Helvetica")
